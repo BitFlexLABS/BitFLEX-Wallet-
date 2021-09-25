@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
   },
   changePinContainer: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: 'black',
     justifyContent: 'space-between',
   },
 })

@@ -32,7 +32,7 @@ describe('Testnet banner', () => {
       <Provider store={store}>
         <WalletHome
           refreshAllBalances={jest.fn()}
-          initializeSentryUserContext={jest.fn()}
+          // initializeSentryUserContext={jest.fn()}
           setLoading={jest.fn()}
           showMessage={showMessageMock}
           loading={false}
@@ -63,7 +63,7 @@ describe('Testnet banner', () => {
       <Provider store={store}>
         <WalletHome
           refreshAllBalances={jest.fn()}
-          initializeSentryUserContext={jest.fn()}
+          // initializeSentryUserContext={jest.fn()}
           setLoading={jest.fn()}
           showMessage={jest.fn()}
           loading={false}
@@ -86,7 +86,7 @@ describe('Testnet banner', () => {
       <Provider store={store}>
         <WalletHome
           refreshAllBalances={jest.fn()}
-          initializeSentryUserContext={jest.fn()}
+          // initializeSentryUserContext={jest.fn()}
           setLoading={jest.fn()}
           showMessage={jest.fn()}
           loading={false}

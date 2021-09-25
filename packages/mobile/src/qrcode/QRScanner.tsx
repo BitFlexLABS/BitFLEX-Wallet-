@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
     borderColor: colors.gray3,
     borderRadius: 4,
     borderWidth: 1.5,
-    color: colors.dark,
+    color: colors.light,
     height: 80,
     maxHeight: 150,
   },

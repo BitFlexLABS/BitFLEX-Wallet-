@@ -1,8 +1,7 @@
 import { sleep } from '@celo/utils/lib/async'
 import { AnyAction } from 'redux'
-import { call, select, spawn, takeEvery } from 'redux-saga/effects'
+import { call, spawn, takeEvery } from 'redux-saga/effects'
 import { accountSaga } from 'src/account/saga'
-import { devModeSelector } from 'src/account/selectors'
 import { appInit, appRemoteFeatureFlagSaga, appSaga, appVersionSaga } from 'src/app/saga'
 import { dappKitSaga } from 'src/dappkit/dappkit'
 import { escrowSaga } from 'src/escrow/saga'
@@ -21,7 +20,7 @@ import { networkInfoSaga } from 'src/networkInfo/saga'
 import { paymentRequestSaga } from 'src/paymentRequest/saga'
 import { waitForRehydrate } from 'src/redux/persist-helper'
 import { sendSaga } from 'src/send/saga'
-import { sentrySaga } from 'src/sentry/saga'
+// import { sentrySaga } from 'src/sentry/saga'
 import { stableTokenSaga } from 'src/stableToken/saga'
 import { transactionSaga } from 'src/transactions/saga'
 import { checkAccountExistenceSaga } from 'src/utils/accountChecker'
@@ -47,10 +46,10 @@ const loggerBlacklist = [
 ]
 
 function* loggerSaga() {
-  const devModeActive = yield select(devModeSelector)
-  if (!devModeActive) {
-    return
-  }
+  // const devModeActive = yield select(devModeSelector)
+  // if (!devModeActive) {
+  //   return
+  // }
 
   yield takeEvery('*', (action: AnyAction) => {
     if (
@@ -90,7 +89,7 @@ export function* rootSaga() {
     yield spawn(appRemoteFeatureFlagSaga)
     yield spawn(loggerSaga)
     yield spawn(appSaga)
-    yield spawn(sentrySaga)
+    // yield spawn(sentrySaga)
     yield spawn(networkInfoSaga)
     yield spawn(gethSaga)
     yield spawn(web3Saga)

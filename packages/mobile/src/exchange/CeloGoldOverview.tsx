@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   },
   balance: {
     ...fontStyles.mediumNumber,
-    color: colors.dark,
+    color: colors.light,
     marginBottom: 8,
   },
   localBalance: {

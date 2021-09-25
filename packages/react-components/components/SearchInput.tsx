@@ -14,7 +14,12 @@ export default function SearchInput({ style, ...passThroughProps }: Props) {
       <View style={styles.iconContainer}>
         <Search />
       </View>
-      <TextInput {...passThroughProps} inputStyle={styles.input} testID="SearchInput" />
+      <TextInput
+        placeholderTextColor={'grey'}
+        {...passThroughProps}
+        inputStyle={styles.input}
+        testID="SearchInput"
+      />
     </View>
   )
 }
@@ -35,5 +40,6 @@ const styles = StyleSheet.create({
   },
   input: {
     paddingVertical: 6,
+    color: 'white',
   },
 })

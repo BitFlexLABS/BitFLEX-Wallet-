@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
   },
   phraseContainer: {
     marginTop: 8,
-    backgroundColor: colors.beige,
+    backgroundColor: '#535353',
     borderWidth: 1,
     borderColor: colors.dark,
     borderRadius: 4,

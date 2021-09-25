@@ -26,7 +26,7 @@ export default function Modal({ children, isVisible, style }: Props) {
 
 const styles = StyleSheet.create({
   root: {
-    backgroundColor: colors.light,
+    backgroundColor: colors.dark,
     padding: 24,
     maxHeight: '100%',
   },

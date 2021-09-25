@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
   },
-  name: { ...fontStyles.regular500, color: colors.dark },
+  name: { ...fontStyles.regular500, color: colors.light },
   phone: {
     ...fontStyles.small,
     color: colors.gray4,

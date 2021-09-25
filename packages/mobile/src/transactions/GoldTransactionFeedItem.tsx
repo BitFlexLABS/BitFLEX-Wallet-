@@ -96,15 +96,15 @@ const styles = StyleSheet.create({
   },
   txMode: {
     ...fontStyles.regular500,
-    color: colors.dark,
+    color: colors.light,
   },
   exchangeRate: {
     ...fontStyles.regular500,
-    color: colors.dark,
+    color: colors.light,
   },
   amount: {
     ...fontStyles.regular500,
-    color: colors.dark,
+    color: colors.light,
   },
   time: {
     ...fontStyles.small,

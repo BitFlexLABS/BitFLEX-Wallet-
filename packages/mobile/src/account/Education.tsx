@@ -183,6 +183,7 @@ export default class Education extends React.Component<Props, State> {
             removeClippedSubviews={false}
           >
             {stepInfo.map((step: EducationStep, i: number) => {
+              console.log('Step image is', stepInfo)
               return (
                 <View style={styles.swipedContent} key={i}>
                   {step.isTopTitle && <Text style={styles.headingTop}>{step.title}</Text>}

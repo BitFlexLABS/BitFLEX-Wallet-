@@ -4,11 +4,14 @@ import {
   ActionableAttestation,
   AttestationsWrapper,
 } from '@celo/contractkit/lib/wrappers/Attestations'
+import { sleep } from '@celo/utils/lib/async'
+import { AttestationsStatus } from '@celo/utils/lib/attestations'
+import { getPhoneHash } from '@celo/utils/lib/phoneNumbers'
 import {
   CheckSessionResp,
   GetDistributedBlindedPepperResp,
   StartSessionResp,
-} from '@celo/komencikit/src/actions'
+} from '@komenci/kit/src/actions'
 import {
   AuthenticationFailed,
   FetchError,
@@ -25,12 +28,9 @@ import {
   TxRevertError,
   TxTimeoutError,
   WalletValidationError,
-} from '@celo/komencikit/src/errors'
-import { KomenciKit } from '@celo/komencikit/src/kit'
-import { verifyWallet } from '@celo/komencikit/src/verifyWallet'
-import { sleep } from '@celo/utils/lib/async'
-import { AttestationsStatus } from '@celo/utils/lib/attestations'
-import { getPhoneHash } from '@celo/utils/lib/phoneNumbers'
+} from '@komenci/kit/src/errors'
+import { KomenciKit } from '@komenci/kit/src/kit'
+import { verifyWallet } from '@komenci/kit/src/verifyWallet'
 import DeviceInfo from 'react-native-device-info'
 import { all, call, delay, put, race, select, takeEvery, takeLatest } from 'redux-saga/effects'
 import { VerificationEvents } from 'src/analytics/Events'

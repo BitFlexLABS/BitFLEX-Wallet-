@@ -1,6 +1,5 @@
 import Button from '@celo/react-components/components/Button'
 import TextButton from '@celo/react-components/components/TextButton'
-import colors from '@celo/react-components/styles/colors'
 import fontStyles from '@celo/react-components/styles/fonts'
 import { Spacing } from '@celo/react-components/styles/styles'
 import { StackScreenProps } from '@react-navigation/stack'
@@ -107,7 +106,7 @@ function goToAccountKeyGuide() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.light,
+    backgroundColor: 'black',
   },
   introContainer: {
     flex: 1,

@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   time: {
-    color: colors.dark,
+    color: colors.light,
     paddingBottom: 10,
   },
   bodyText: {
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
   },
   instructions: {
     textAlign: 'center',
-    color: colors.dark,
+    color: colors.light,
     padding: 20,
   },
 })

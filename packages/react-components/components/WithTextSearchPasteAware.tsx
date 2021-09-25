@@ -57,5 +57,6 @@ const styles = StyleSheet.create({
   },
   input: {
     paddingVertical: 6,
+    color: 'white',
   },
 })

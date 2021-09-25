@@ -2,7 +2,6 @@
  * This is a VIEW, which we use as an overlay, when we need
  * to lock the app with a PIN code.
  */
-import colors from '@celo/react-components/styles/colors'
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { BackHandler, StyleSheet } from 'react-native'
@@ -72,7 +71,7 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: 20,
     flex: 1,
-    backgroundColor: colors.light,
+    backgroundColor: 'black',
   },
 })
 

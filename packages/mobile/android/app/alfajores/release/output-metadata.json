@@ -1,0 +1,59 @@
+{
+  "version": 2,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "org.celo.mobile",
+  "variantName": "processAlfajoresReleaseResources",
+  "elements": [
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "x86_64"
+        }
+      ],
+      "versionCode": 1005342934,
+      "versionName": "1.15.2",
+      "outputFile": "app-alfajores-x86_64-release.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "x86"
+        }
+      ],
+      "versionCode": 1002197206,
+      "versionName": "1.15.2",
+      "outputFile": "app-alfajores-x86-release.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "armeabi-v7a"
+        }
+      ],
+      "versionCode": 1001148630,
+      "versionName": "1.15.2",
+      "outputFile": "app-alfajores-armeabi-v7a-release.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "arm64-v8a"
+        }
+      ],
+      "versionCode": 1004294358,
+      "versionName": "1.15.2",
+      "outputFile": "app-alfajores-arm64-v8a-release.apk"
+    }
+  ]
+}

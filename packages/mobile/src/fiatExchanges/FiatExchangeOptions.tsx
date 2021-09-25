@@ -341,11 +341,11 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-between',
-    backgroundColor: colors.gray1,
+    backgroundColor: colors.dark,
   },
   topContainer: {
     paddingHorizontal: variables.contentPadding,
-    backgroundColor: colors.light,
+    backgroundColor: 'black',
   },
   titleContainer: {
     flexDirection: 'row',

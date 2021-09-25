@@ -405,7 +405,7 @@ const styles = StyleSheet.create({
   recaptchaClose: {
     justifyContent: 'center',
     alignItems: 'flex-start',
-    color: colors.dark,
+    color: colors.light,
   },
   recaptcha: {
     backgroundColor: 'transparent',
@@ -434,7 +434,7 @@ const styles = StyleSheet.create({
   },
   doINeedToConfirmButton: {
     textAlign: 'center',
-    color: colors.onboardingBrownLight,
+    color: colors.onboardingLightBlue,
     padding: Spacing.Regular16,
   },
   loader: {

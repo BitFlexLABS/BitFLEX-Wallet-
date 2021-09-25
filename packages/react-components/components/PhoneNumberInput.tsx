@@ -3,7 +3,6 @@ import FormField from '@celo/react-components/components/FormField'
 import FormTextInput from '@celo/react-components/components/FormTextInput'
 import Touchable from '@celo/react-components/components/Touchable'
 import ValidatedTextInput from '@celo/react-components/components/ValidatedTextInput'
-import colors from '@celo/react-components/styles/colors'
 import SmsRetriever from '@celo/react-native-sms-retriever'
 import { LocalizedCountry } from '@celo/utils/lib/countries'
 import { ValidatorKind } from '@celo/utils/lib/inputValidation'
@@ -141,11 +140,12 @@ const styles = StyleSheet.create({
     width: 80,
     paddingHorizontal: 12,
     alignItems: 'stretch',
-    backgroundColor: colors.light,
+    backgroundColor: '#161616',
     borderRadius: 8,
   },
   countryFlagContainer: {
     justifyContent: 'center',
+    backgroundColor: '#161616',
   },
   countryCodeContent: {
     flex: 1,

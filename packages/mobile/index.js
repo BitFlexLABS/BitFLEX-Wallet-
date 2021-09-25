@@ -9,21 +9,21 @@ if (__DEV__) {
 import { AppRegistry } from 'react-native'
 import Logger from 'src/utils/Logger'
 // This needs to happen early so any errors (including in the store) get caught
-import { SENTRY_ENABLED } from 'src/sentry/Sentry'
+// import { SENTRY_ENABLED } from 'src/sentry/Sentry'
 import App from 'src/app/App'
-import * as Sentry from '@sentry/react-native'
+// import * as Sentry from '@sentry/react-native'
 import 'react-native-gesture-handler'
 
 Logger.overrideConsoleLogs()
 
 const defaultErrorHandler = ErrorUtils.getGlobalHandler()
-const customErrorHandler = (e, isFatal) => {
-  if (SENTRY_ENABLED) {
-    Sentry.captureException(e)
-  }
-  Logger.error('RootErrorHandler', `Unhandled error. isFatal: ${isFatal}`, e)
-  defaultErrorHandler(e, isFatal)
-}
-ErrorUtils.setGlobalHandler(customErrorHandler)
+// const customErrorHandler = (e, isFatal) => {
+//   if (SENTRY_ENABLED) {
+//     Sentry.captureException(e)
+//   }
+//   Logger.error('RootErrorHandler', `Unhandled error. isFatal: ${isFatal}`, e)
+//   defaultErrorHandler(e, isFatal)
+// }
+// ErrorUtils.setGlobalHandler(customErrorHandler)
 
 AppRegistry.registerComponent('celo', () => App)

@@ -9,7 +9,7 @@ files=(
   "packages/mobile/android/app/src/alfajoresdev/google-services.json"
   "packages/mobile/android/app/src/mainnet/google-services.json"
   "packages/mobile/android/app/src/mainnetdev/google-services.json"
-  "packages/mobile/android/sentry.properties"
+  # "packages/mobile/android/sentry.properties"
   "packages/mobile/ios/GoogleService-Info.alfajores.plist"
   "packages/mobile/ios/GoogleService-Info.alfajoresdev.plist"
   "packages/mobile/ios/GoogleService-Info.mainnet.plist"

@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   },
   ratio: {
     textAlign: 'center',
-    color: colors.dark,
+    color: colors.light,
   },
   finePrint: {
     textAlign: 'center',

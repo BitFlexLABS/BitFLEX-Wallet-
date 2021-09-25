@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
   },
   subTitle: {
     ...fontStyles.regular,
-    color: colors.dark,
+    color: colors.light,
     paddingVertical: 16,
   },
   appsContainer: {
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
   },
   appName: {
     ...fontStyles.regular,
-    color: colors.dark,
+    color: colors.light,
   },
   disconnectButton: {
     ...fontStyles.small,

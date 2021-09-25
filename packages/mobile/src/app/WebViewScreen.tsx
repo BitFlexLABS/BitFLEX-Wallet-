@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     top: 0,
   },
   close: {
-    color: colors.dark,
+    color: colors.light,
   },
 })
 

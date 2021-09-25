@@ -350,7 +350,7 @@ const styles = StyleSheet.create({
   bodyText: {
     marginTop: 20,
     ...fontStyles.regular,
-    color: colors.dark,
+    color: colors.light,
     textAlign: 'center',
   },
   bodyTextBold: {

@@ -1,4 +1,4 @@
-import { NavigationContainer } from '@react-navigation/native'
+import { DarkTheme, NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
@@ -13,7 +13,7 @@ const MockedNavigator = ({
 }) => {
   return (
     <SafeAreaProvider>
-      <NavigationContainer>
+      <NavigationContainer theme={DarkTheme}>
         <Stack.Navigator initialRouteName={'MockedScreen'}>
           <Stack.Screen name="MockedScreen" component={component} initialParams={params} />
         </Stack.Navigator>

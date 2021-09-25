@@ -70,7 +70,13 @@ export function SettingsItemSwitch({
     <Wrapper>
       <View style={styles.container}>
         <Title value={title} />
-        <Switch testID={testID} value={value} onValueChange={onValueChange} />
+        <Switch
+          thumbColor={colors.gray2}
+          trackColor={{ true: colors.greenUI, false: colors.gray5 }}
+          testID={testID}
+          value={value}
+          onValueChange={onValueChange}
+        />
       </View>
       {details && (
         <View>
@@ -119,13 +125,13 @@ export function SettingsItemInput({
   placeholder,
 }: SettingsItemInputProps) {
   const onFocus = () => {
-    setInputColor(colors.dark)
+    setInputColor(colors.light)
   }
   const onBlur = () => {
-    setInputColor(colors.gray4)
+    setInputColor(colors.light)
   }
 
-  const [inputColor, setInputColor] = React.useState(colors.gray4)
+  const [inputColor, setInputColor] = React.useState(colors.light)
   return (
     <Wrapper>
       <View style={styles.container}>
@@ -138,6 +144,7 @@ export function SettingsItemInput({
           onBlur={onBlur}
           value={value}
           placeholder={placeholder}
+          placeholderTextColor={'#767171'}
           onChangeText={onValueChange}
           showClearButton={false}
         />
@@ -152,13 +159,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingRight: 16,
+    backgroundColor: 'black',
   },
   left: {
     justifyContent: 'center',
   },
   title: {
     ...fontStyles.regular,
-    color: colors.dark,
+    color: colors.light,
   },
   value: {
     ...fontStyles.regular,
@@ -167,7 +175,7 @@ const styles = StyleSheet.create({
   },
   details: {
     ...fontStyles.small,
-    color: colors.gray4,
+    color: '#767171',
     paddingTop: 16,
     paddingRight: 16,
   },
@@ -183,6 +191,6 @@ const styles = StyleSheet.create({
     minWidth: 160,
     textAlign: 'right',
     paddingVertical: 0,
-    color: colors.gray4,
+    color: 'white',
   },
 })

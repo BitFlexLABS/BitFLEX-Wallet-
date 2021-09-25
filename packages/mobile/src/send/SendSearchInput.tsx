@@ -22,6 +22,7 @@ export function SendSearchInput({ input, onChangeText }: SendSearchInputProps) {
     <View style={styles.textInputContainer}>
       <SearchInput
         shouldShowClipboard={isValidAddress}
+        placeholderTextColor={'#767171'}
         placeholder={t('global:namePhoneAddress')}
         value={input}
         onChangeText={onChangeText}

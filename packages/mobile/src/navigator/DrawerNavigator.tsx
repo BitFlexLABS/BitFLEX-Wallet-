@@ -240,7 +240,8 @@ export default function DrawerNavigator() {
       backBehavior={'initialRoute'}
       drawerContentOptions={{
         labelStyle: [fontStyles.regular, { marginLeft: -20, fontWeight: 'normal' }],
-        activeBackgroundColor: colors.gray2,
+        activeBackgroundColor: '#535353',
+        activeTintColor: colors.dark,
       }}
     >
       <Drawer.Screen
@@ -319,7 +320,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 12,
     height: 1,
-    backgroundColor: colors.gray2,
+    backgroundColor: 'gray',
     alignSelf: 'stretch',
   },
   amountLabelSmall: {
@@ -329,7 +330,7 @@ const styles = StyleSheet.create({
   },
   borderBottom: {
     height: 1,
-    backgroundColor: colors.gray2,
+    backgroundColor: 'gray',
     alignSelf: 'stretch',
     marginTop: 12,
     marginBottom: 12,

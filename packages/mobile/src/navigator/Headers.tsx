@@ -54,7 +54,7 @@ export const nuxNavigationOptions: StackNavigationOptions = {
     justifyContent: 'center',
   },
   headerStyle: {
-    backgroundColor: colors.light,
+    backgroundColor: colors.dark,
   },
 }
 
@@ -71,9 +71,9 @@ export const emptyHeader: StackNavigationOptions = {
     alignItems: 'center',
   },
   headerTitleAlign: 'center',
-  cardStyle: { backgroundColor: colors.light },
+  cardStyle: { backgroundColor: 'black' },
   headerStyle: {
-    backgroundColor: colors.light,
+    backgroundColor: 'black',
     shadowRadius: 0,
     shadowOffset: {
       height: 0,
@@ -82,7 +82,7 @@ export const emptyHeader: StackNavigationOptions = {
     ...Platform.select({
       android: {
         elevation: 0,
-        backgroundColor: 'transparent',
+        backgroundColor: 'black',
       },
       ios: {
         borderBottomWidth: 0,

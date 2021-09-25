@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
   },
   title: {
     ...fontStyles.regular,
-    color: colors.dark,
+    color: colors.light,
   },
   dropDownText: {
     ...fontStyles.regular,

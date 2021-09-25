@@ -9,7 +9,7 @@ const Hamburger = () => {
         y1="9.75"
         x2="24.75"
         y2="9.75"
-        stroke="#2E3338"
+        stroke="#6bbf21"
         strokeWidth="2.5"
         strokeLinecap="round"
       />
@@ -18,7 +18,7 @@ const Hamburger = () => {
         y1="15.75"
         x2="24.75"
         y2="15.75"
-        stroke="#2E3338"
+        stroke="#6bbf21"
         strokeWidth="2.5"
         strokeLinecap="round"
       />
@@ -27,7 +27,7 @@ const Hamburger = () => {
         y1="21.75"
         x2="24.75"
         y2="21.75"
-        stroke="#2E3338"
+        stroke="#6bbf21"
         strokeWidth="2.5"
         strokeLinecap="round"
       />

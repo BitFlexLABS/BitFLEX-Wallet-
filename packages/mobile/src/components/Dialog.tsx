@@ -41,8 +41,8 @@ export default function Dialog({
   testID,
 }: Props) {
   return (
-    <Modal isVisible={isVisible}>
-      <ScrollView contentContainerStyle={styles.root}>
+    <Modal style={{ backgroundColor: 'black' }} isVisible={isVisible}>
+      <ScrollView style={{ backgroundColor: 'black' }} contentContainerStyle={styles.root}>
         {image && <Image style={styles.imageContainer} source={image} resizeMode="contain" />}
         {title && <Text style={styles.title}>{title}</Text>}
         <Text style={styles.body}>{children}</Text>
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   secondary: {
-    color: colors.gray4,
+    color: colors.light,
     paddingTop: 16,
   },
   primary: {

@@ -78,7 +78,7 @@ BackupForceScreen.navOptions = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.light,
+    backgroundColor: colors.dark,
   },
   content: {
     flex: 1,

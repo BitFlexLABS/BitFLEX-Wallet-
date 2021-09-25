@@ -8,7 +8,7 @@ import colors from '@celo/react-components/styles/colors'
 import fontStyles from '@celo/react-components/styles/fonts'
 import { isE164Number } from '@celo/utils/lib/phoneNumbers'
 import { StackScreenProps } from '@react-navigation/stack'
-import * as Sentry from '@sentry/react-native'
+// import * as Sentry from '@sentry/react-native'
 import locales from 'locales'
 import * as React from 'react'
 import { WithTranslation } from 'react-i18next'
@@ -240,11 +240,11 @@ export class Account extends React.Component<Props, State> {
               <Text>Show Debug Screen</Text>
             </TouchableOpacity>
           </View>
-          <View style={styles.devSettingsItem}>
+          {/* <View style={styles.devSettingsItem}>
             <TouchableOpacity onPress={Sentry.nativeCrash}>
               <Text>Trigger a crash</Text>
             </TouchableOpacity>
-          </View>
+          </View> */}
           <View style={styles.devSettingsItem}>
             <TouchableOpacity onPress={this.wipeReduxStore}>
               <Text>Wipe Redux Store</Text>
@@ -520,7 +520,6 @@ const styles = StyleSheet.create({
     marginLeft: 16,
     paddingLeft: 0,
     borderBottomColor: colors.gray2,
-    borderBottomWidth: 1,
   },
 })
 

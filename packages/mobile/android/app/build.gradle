@@ -74,28 +74,30 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
-        enableHermes: true,  // clean and rebuild if changing
-        hermesFlagsRelease: ["-w", "-O", "-output-source-map"],
-        hermesFlagsDebug: ["-w", "-O", "-output-source-map"],
-        cliPath: "../../node_modules/react-native/cli.js",
-        hermesCommand: "../../../../node_modules/hermes-engine/%OS-BIN%/hermesc",
+        enableHermes         : true,  // clean and rebuild if changing
+        hermesFlagsRelease   : ["-w", "-O", "-output-source-map"],
+        hermesFlagsDebug     : ["-w", "-O", "-output-source-map"],
+        cliPath              : "../../node_modules/react-native/cli.js",
+        hermesCommand        : "../../../../node_modules/hermes-engine/%OS-BIN%/hermesc",
         composeSourceMapsPath: "../../node_modules/react-native/scripts/compose-source-maps.js",
-        entryFile: "index.js",
+        entryFile            : "index.js",
+        bundleInStaging      : true,       // Add this
+        bundleInInternalTest : true,  // Add this
 ]
 
 project.ext.envConfigFiles = [
-    // IMPORTANT: longer variants should be first, as react-native-config plugin matches the first prefix it finds
-    alfajoresdev: ".env.alfajoresdev",
-    alfajores: ".env.alfajores",
-    mainnetdev: ".env.mainnetdev",
-    mainnet: ".env.mainnet",
-    apptest: ".env.test",
-    "": ".env.alfajoresdev", // Fallback
+        // IMPORTANT: longer variants should be first, as react-native-config plugin matches the first prefix it finds
+        alfajoresdev: ".env.alfajoresdev",
+        alfajores   : ".env.alfajores",
+        mainnetdev  : ".env.mainnetdev",
+        mainnet     : ".env.mainnet",
+        apptest     : ".env.test",
+        ""          : ".env.alfajoresdev", // Fallback
 ]
 
-project.ext.sentryCli = [
-    logLevel: "debug"
-]
+// project.ext.sentryCli = [
+//         logLevel: "debug"
+// ]
 
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 apply from: "../../../../node_modules/react-native/react.gradle"
@@ -106,9 +108,9 @@ apply from: "../../../../node_modules/react-native/react.gradle"
  */
 def isDetoxTestBuild = Boolean.valueOf(project.properties['isDetoxBuild'] ?: 'false')
 
-if (!isDetoxTestBuild) {
-  apply from: "../../../../node_modules/@sentry/react-native/sentry.gradle"
-}
+// if (!isDetoxTestBuild) {
+//     apply from: "../../../../node_modules/@sentry/react-native/sentry.gradle"
+// }
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -171,18 +173,14 @@ android {
         missingDimensionStrategy 'react-native-camera', 'general'
         vectorDrawables.useSupportLibrary = true
     }
+    lintOptions { checkReleaseBuilds false }
     signingConfigs {
         release {
-            if (isDetoxTestBuild) {
-                storeFile file('debug.keystore')
-                storePassword 'android'
-                keyAlias 'androiddebugkey'
-                keyPassword 'android'
-            } else if (project.hasProperty('CELO_RELEASE_STORE_FILE')) {
-                storeFile file(CELO_RELEASE_STORE_FILE)
-                storePassword System.getenv("CELO_RELEASE_STORE_PASSWORD")
-                keyAlias CELO_RELEASE_KEY_ALIAS
-                keyPassword System.getenv("CELO_RELEASE_KEY_PASSWORD")
+            if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
+                storeFile file(MYAPP_UPLOAD_STORE_FILE)
+                storePassword MYAPP_UPLOAD_STORE_PASSWORD
+                keyAlias MYAPP_UPLOAD_KEY_ALIAS
+                keyPassword MYAPP_UPLOAD_KEY_PASSWORD
             }
         }
 
@@ -235,7 +233,7 @@ android {
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
             // https://developer.android.com/studio/build/configure-apk-splits.html
-            def versionCodes = ["armeabi-v7a":1, "x86":2, "arm64-v8a": 4, "x86_64": 5]
+            def versionCodes = ["armeabi-v7a": 1, "x86": 2, "arm64-v8a": 4, "x86_64": 5]
             def abi = output.getFilter(OutputFile.ABI)
             if (abi != null) {  // null for the universal-debug, universal-release variants
                 output.versionCodeOverride =
@@ -248,10 +246,28 @@ android {
         exclude 'META-INF/-no-jdk.kotlin_module'
         exclude 'META-INF/androidx.exifinterface_exifinterface.version'
         pickFirst '**/libc++_shared.so'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        pickFirst '**/x86/libnativecrypto.so'
+        pickFirst '**/x86_64/libnativecrypto.so'
+        pickFirst '**/armeabi-v7a/libnativecrypto.so'
+        pickFirst '**/arm64-v8a/libnativecrypto.so'
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+
+        exclude 'META-INF/rxkotlin.properties'
+        exclude 'META-INF/rxkotlin_main.kotlin_module'
+        doNotStrip '*/mips/*.so'
+        doNotStrip '*/mips64/*.so'
     }
-    
+
     dexOptions {
-       javaMaxHeapSize "3g"
+        javaMaxHeapSize "3g"
     }
 }
 
@@ -259,7 +275,7 @@ dependencies {
     androidTestImplementation('com.wix:detox:+')
 
     def multidex_version = "2.0.1"
-    implementation 'androidx.multidex:multidex:$multidex_version'
+    implementation "androidx.multidex:multidex:$multidex_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation project(':react-native-geth')
@@ -270,14 +286,14 @@ dependencies {
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
-      exclude group:'com.facebook.fbjni'
+        exclude group: 'com.facebook.fbjni'
     }
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
-        exclude group:'com.facebook.flipper'
-        exclude group:'com.squareup.okhttp3', module:'okhttp'
+        exclude group: 'com.facebook.flipper'
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
     }
     debugImplementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}") {
-        exclude group:'com.facebook.flipper'
+        exclude group: 'com.facebook.flipper'
     }
 
     if (enableHermes) {
@@ -298,11 +314,11 @@ task copyDownloadableDepsToLibs(type: Copy) {
 
 def enableFirebase = project.env.get("FIREBASE_ENABLED")
 
-if (enableFirebase.toBoolean()){
-  println 'Firebase is enabled in .env variable'
-  apply plugin: 'com.google.gms.google-services'
+if (enableFirebase.toBoolean()) {
+    println 'Firebase is enabled in .env variable'
+    apply plugin: 'com.google.gms.google-services'
 } else {
-  println 'Info: Firebase is disabled in .env variable'
+    println 'Info: Firebase is disabled in .env variable'
 }
 
 apply from: file("../../../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)

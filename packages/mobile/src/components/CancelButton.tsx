@@ -37,6 +37,6 @@ export default function CancelButton({ eventName, onCancel, style }: Props) {
 
 const styles = StyleSheet.create({
   title: {
-    color: colors.dark,
+    color: colors.light,
   },
 })

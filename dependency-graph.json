@@ -83,7 +83,7 @@
     "location": "packages/flake-tracker",
     "dependencies": []
   },
-  "@celo/komencikit": {
+  "@komenci/kit": {
     "location": "packages/komencikit",
     "dependencies": [
       "@celo/base",
@@ -108,7 +108,7 @@
       "@celo/contractkit",
       "@celo/flake-tracker",
       "@celo/identity",
-      "@celo/komencikit",
+      "@komenci/kit",
       "@celo/network-utils",
       "@celo/react-components",
       "@celo/typescript",

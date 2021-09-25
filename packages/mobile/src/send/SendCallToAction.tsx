@@ -1,9 +1,7 @@
 import TextButton from '@celo/react-components/components/TextButton'
-import colors from '@celo/react-components/styles/colors'
 import fontStyles from '@celo/react-components/styles/fonts'
 import * as React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-
 interface SendCTAProps {
   icon: React.ReactElement
   header: string
@@ -18,7 +16,7 @@ export function SendCallToAction(props: SendCTAProps) {
     <View style={styles.container}>
       {props.icon}
       <View style={styles.textContainer}>
-        <Text style={fontStyles.small500}>{props.header}</Text>
+        <Text style={fontStyles.h2}>{props.header}</Text>
         <Text style={styles.bodyText}>{props.body}</Text>
         <TextButton onPress={props.onPressCta}>{props.cta}</TextButton>
       </View>
@@ -31,7 +29,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingVertical: 15,
     paddingHorizontal: 20,
-    backgroundColor: colors.gray1,
+    backgroundColor: '#535353',
+    marginTop: 10,
+    borderRadius: 20,
+    marginLeft: 20,
+    marginRight: 20,
   },
   textContainer: {
     flex: 1,
@@ -40,5 +42,6 @@ const styles = StyleSheet.create({
   bodyText: {
     ...fontStyles.small,
     marginVertical: 10,
+    color: 'lightgray',
   },
 })

@@ -1,6 +1,6 @@
 {
-  "name": "@celo/komencikit",
-  "version": "0.0.2-dev",
+  "name": "@komenci/kit",
+  "version": "1.0.0-beta1",
   "description": "Celo's KomenciKit client to interact with the Komenci meta-tx server",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",

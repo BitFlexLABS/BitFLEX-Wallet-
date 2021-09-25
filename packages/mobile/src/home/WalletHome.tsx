@@ -30,7 +30,7 @@ import { NumberToRecipient } from 'src/recipients/recipient'
 import { phoneRecipientCacheSelector } from 'src/recipients/reducer'
 import { RootState } from 'src/redux/reducers'
 import { isAppConnected } from 'src/redux/selectors'
-import { initializeSentryUserContext } from 'src/sentry/actions'
+// import { initializeSentryUserContext } from 'src/sentry/actions'
 import { FeedType } from 'src/transactions/TransactionFeed'
 import TransactionsList from 'src/transactions/TransactionsList'
 import { checkContactsPermission } from 'src/utils/permissions'
@@ -48,7 +48,7 @@ interface StateProps {
 
 interface DispatchProps {
   refreshAllBalances: typeof refreshAllBalances
-  initializeSentryUserContext: typeof initializeSentryUserContext
+  // initializeSentryUserContext: typeof initializeSentryUserContext
   setLoading: typeof setLoading
   showMessage: typeof showMessage
   importContacts: typeof importContacts
@@ -58,7 +58,7 @@ type Props = StateProps & DispatchProps & WithTranslation
 
 const mapDispatchToProps = {
   refreshAllBalances,
-  initializeSentryUserContext,
+  // initializeSentryUserContext,
   setLoading,
   showMessage,
   importContacts,
@@ -98,7 +98,6 @@ export class WalletHome extends React.Component<Props, State> {
 
   componentDidMount = () => {
     // TODO find a better home for this, its unrelated to wallet home
-    this.props.initializeSentryUserContext()
     if (SHOW_TESTNET_BANNER) {
       this.showTestnetBanner()
     }

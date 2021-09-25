@@ -1,4 +1,3 @@
-import colors from '@celo/react-components/styles/colors'
 import fontStyles from '@celo/react-components/styles/fonts'
 import variables from '@celo/react-components/styles/variables'
 import React, { useMemo } from 'react'
@@ -44,7 +43,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.light,
+    backgroundColor: 'black',
   },
   qrContainer: {
     paddingTop: 16,

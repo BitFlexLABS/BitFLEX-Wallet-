@@ -1,5 +1,5 @@
-import { verifyWallet } from '@celo/komencikit/src/verifyWallet'
 import { getPhoneHash } from '@celo/utils/lib/phoneNumbers'
+import { verifyWallet } from '@komenci/kit/src/verifyWallet'
 import * as reduxSagaTestPlan from 'redux-saga-test-plan'
 import { throwError } from 'redux-saga-test-plan/providers'
 import { call, delay, select } from 'redux-saga/effects'

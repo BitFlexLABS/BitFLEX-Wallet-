@@ -4,7 +4,7 @@
   <!--  Base theme, also see API specific overrides in values-vXX/styles.xml -->
   <style name="Base.V0.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
     <item name="android:statusBarColor">@android:color/transparent</item>
-    <item name="android:navigationBarColor">@android:color/black</item>
+    <item name="android:navigationBarColor">@android:color/transparent</item>
     <!-- The window is always allowed to extend into then notch area -->
     <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
     <!-- Allows us to have a fully transparent status bar (or nav bar) -->

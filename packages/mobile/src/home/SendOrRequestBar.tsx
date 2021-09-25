@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: variables.contentPadding,
     paddingVertical: 12,
-    borderTopColor: colors.gray2,
+    borderTopColor: 'grey',
     borderTopWidth: 1,
   },
   button: {

@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     // breaks the vertical centering. Then remove the hardcoded height here!
     lineHeight: 62,
     height: 48,
-    color: colors.dark,
+    color: colors.light,
   },
   dollarBalance: {
     ...fontStyles.large,

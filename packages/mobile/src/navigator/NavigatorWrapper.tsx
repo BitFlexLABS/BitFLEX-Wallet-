@@ -1,6 +1,6 @@
-import colors from '@celo/react-components/styles/colors'
+// import colors from '@celo/react-components/styles/colors'
 import AsyncStorage from '@react-native-community/async-storage'
-import { DefaultTheme, NavigationContainer, NavigationState } from '@react-navigation/native'
+import { DarkTheme, NavigationContainer, NavigationState } from '@react-navigation/native'
 import * as React from 'react'
 import { Share, StyleSheet, View } from 'react-native'
 import DeviceInfo from 'react-native-device-info'
@@ -45,13 +45,13 @@ export const getActiveRouteName = (state: NavigationState) => {
 const RESTORE_STATE = __DEV__ && DEV_RESTORE_NAV_STATE_ON_RELOAD
 
 // Global app them used by react-navigation
-const AppTheme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    background: colors.light,
-  },
-}
+// const AppTheme = {
+//   ...DefaultTheme,
+//   colors: {
+//     ...DefaultTheme.colors,
+//     background: colors.dark,
+//   },
+// }
 
 export const NavigatorWrapper = () => {
   const [isReady, setIsReady] = React.useState(RESTORE_STATE ? false : true)
@@ -173,7 +173,7 @@ export const NavigatorWrapper = () => {
       onReady={onReady}
       onStateChange={handleStateChange}
       initialState={initialState}
-      theme={AppTheme}
+      theme={DarkTheme}
     >
       <View style={styles.container}>
         <Navigator />

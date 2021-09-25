@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   },
   text: {
     ...fontStyles.regular,
-    color: colors.dark,
+    color: colors.light,
   },
   loadingContainer: {
     transform: [{ scale: 0.7 }],
